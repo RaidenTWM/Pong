@@ -15,4 +15,6 @@ class Ball :
 		float GetX();
 		float GetY();
 		float GetRadius();
+		void OnUpdate();
+		void OnDraw();
 };

@@ -48,3 +48,12 @@ int Ball::Move()
 	}
 	return 0;
 }
+
+void Ball::OnUpdate()
+{
+
+}
+void Ball::OnDraw()
+{
+	DrawCircle(GetX(), GetY(), GetRadius(), WHITE);
+}

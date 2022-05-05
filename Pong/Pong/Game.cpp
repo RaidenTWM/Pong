@@ -38,7 +38,6 @@ void Game::Draw()
     DrawText(TextFormat("SCORE: %i", enemyPoints), GetScreenWidth() / 2 - 300, 10, 20, RED);
     DrawText(TextFormat("SCORE: %i", playerPoints), GetScreenWidth() / 2 + 300, 10, 20, BLUE);
 
-    DrawCircle(ball->GetX(), ball->GetY(), ball->GetRadius(), WHITE);
 
     DrawRectangle(25, GetScreenHeight() / 2 - 50, 10, 100, RED);
     DrawRectangle(GetScreenWidth() - 25, GetScreenHeight() / 2 - 50, 10, 100, BLUE);
