@@ -1,5 +1,7 @@
 #pragma once
-class Ball
+#include "Objects.h";
+class Ball :
+	public Objects
 {
 	protected:
 		float x = 640;
@@ -9,9 +11,8 @@ class Ball
 		float ySpeed = 300;
 	public:
 		Ball();
-		void Move();
+		int Move();
 		float GetX();
 		float GetY();
 		float GetRadius();
 };
-

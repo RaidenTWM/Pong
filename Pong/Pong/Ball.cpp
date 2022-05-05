@@ -18,7 +18,7 @@ float Ball::GetRadius()
 	return rad;
 }
 
-void Ball::Move()
+int Ball::Move()
 {
 	x += xSpeed * GetFrameTime();
 	y += ySpeed * GetFrameTime();
@@ -34,12 +34,17 @@ void Ball::Move()
 	}
 	if (x + rad > GetScreenWidth())
 	{
-		x = GetScreenWidth() - rad;
+		x = GetScreenWidth() / 2;
+		y = GetScreenHeight() / 2;
 		xSpeed *= -1;
+		return -1;
 	}
 	if (x - rad < 0)
 	{
-		x = 0 + rad;
+		x = GetScreenWidth() / 2;
+		y = GetScreenHeight() / 2;
 		xSpeed *= -1;
+		return 1;
 	}
+	return 0;
 }

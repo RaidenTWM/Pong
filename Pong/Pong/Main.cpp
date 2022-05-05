@@ -4,16 +4,15 @@
 
 int main()
 {
-    //Creates a new Game type that is actually a TanksGame type (which is essentially a Game
-            //  type but more specific.
+    //Creates a new Game class variable called game.
     Game* game = new Game();
 
     //Setting how wany frames per second the game should be running at.
-    SetTargetFPS(120);
+    SetTargetFPS(120); 
     //Sets the size of the game window and the name of the window.
     InitWindow(1280, 720, "Pong");
 
-    //Initialises the game to run the init code found in the game.cs
+    //Initialises the game to run the init code found in the Game.cpp.
     game->Init();
 
     //While the window is open..keep updating and drawing whatever is being requested from
