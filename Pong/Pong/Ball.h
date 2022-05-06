@@ -1,7 +1,7 @@
 #pragma once
-#include "Objects.h";
+#include "Paddle.h";
 class Ball :
-	public Objects
+	public Paddle
 {
 	protected:
 		float x = 640;

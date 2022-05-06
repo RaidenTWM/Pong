@@ -32,20 +32,21 @@ int Ball::Move()
 		y = 0 + rad;
 		ySpeed *= -1;
 	}
-	if (x + rad > GetScreenWidth())
+	if (x + rad > GetScreenWidth() - 10)
 	{
 		x = GetScreenWidth() / 2;
 		y = GetScreenHeight() / 2;
 		xSpeed *= -1;
 		return -1;
 	}
-	if (x - rad < 0)
+	if (x - rad < 10)
 	{
 		x = GetScreenWidth() / 2;
 		y = GetScreenHeight() / 2;
 		xSpeed *= -1;
 		return 1;
 	}
+	if (Paddle::Get1X() > x)
 	return 0;
 }
 

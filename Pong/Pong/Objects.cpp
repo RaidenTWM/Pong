@@ -17,5 +17,5 @@ void Objects::Update()
 }
 void Objects::Draw()
 {
-	OnDraw();
+	Objects::OnDraw();
 }
