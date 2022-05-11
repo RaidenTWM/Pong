@@ -9,9 +9,13 @@ float Ball::GetX()
 {
 	return x;
 }
-void Ball::InvertSpeedY()
+float Ball::GetY()
 {
-	ySpeed *= -1;
+	return y;
+}
+float Ball::GetRadius()
+{
+	return rad;
 }
 float Ball::GetSpeedX()
 {
@@ -25,15 +29,30 @@ void Ball::InvertSpeedX()
 {
 	xSpeed *= -1;
 }
-float Ball::GetY()
+void Ball::InvertSpeedX(float yy, float h)
 {
-	return y;
+	xSpeed *= -1.1;
+	if (xSpeed < 0)
+	{
+	ySpeed = (y - yy) / (h / 2) * -xSpeed;
+	} else { ySpeed = (y - yy) / (h / 2) * xSpeed; }
 }
-float Ball::GetRadius()
+void Ball::InvertSpeedY()
 {
-	return rad;
+	ySpeed *= -1;
 }
-
+void Ball::Stop()
+{
+	x = 640;
+	y = 360;
+	xSpeed = 0;
+	ySpeed = 0;
+}
+void Ball::Start()
+{
+	xSpeed = -300;
+	ySpeed = -300;
+}
 
 int Ball::OnUpdate()
 {

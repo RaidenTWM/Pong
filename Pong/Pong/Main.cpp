@@ -25,6 +25,8 @@ int main()
 
     //Calls upon the shutdown function.
     game->Shutdown();
+    delete game;
+    game = nullptr;
 
     //Closes the game.
     CloseWindow();

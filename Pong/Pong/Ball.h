@@ -11,6 +11,7 @@ class Ball
 		Ball();
 		float GetX();
 		void InvertSpeedX();
+		void InvertSpeedX(float yy, float h);
 		void InvertSpeedY();
 		float GetSpeedX();
 		float GetSpeedY();
@@ -18,4 +19,6 @@ class Ball
 		float GetRadius();
 		int OnUpdate();
 		void OnDraw();
+		void Stop();
+		void Start();
 };

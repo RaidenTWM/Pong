@@ -2,7 +2,7 @@
 #include "raylib.h"
 
 Paddle::Paddle(char s) {
-	y = GetScreenHeight() / 2 - 50;
+	y = GetScreenHeight() / 2 - height / 2;
 	side = s;
 }
 
@@ -15,7 +15,7 @@ float Paddle::GetY() {
 
 Rectangle Paddle::GetRect()
 {
-	return Rectangle{ Paddle::GetX() - Paddle::width / 2, Paddle::GetY() - Paddle::height / 2, 10, 100 };
+	return Rectangle{ Paddle::GetX() - Paddle::width / 2, Paddle::GetY() - Paddle::height / 2, 10, height };
 }
 
 void Paddle::OnUpdate(Ball* ball)
@@ -40,14 +40,14 @@ void Paddle::OnUpdate(Ball* ball)
 	{
 		if (ball->GetSpeedX() < 0)
 		{
-			ball->InvertSpeedX();
+			ball->InvertSpeedX(y, height);
 		}
 	}
 	if (CheckCollisionCircleRec(Vector2{ ball->GetX(), ball->GetY() }, ball->GetRadius(), GetRect()) && side == 'r')
 	{
 		if (ball->GetSpeedX() > 0)
 		{
-			ball->InvertSpeedX();
+			ball->InvertSpeedX(y, height);
 		}
 	}
 }
