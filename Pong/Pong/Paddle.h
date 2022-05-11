@@ -1,12 +1,22 @@
 #pragma once
-#include "Objects.h"
+#include "raylib.h"
+#include "Ball.h"
 class Paddle :
-    public Objects
+    public Ball
 {
+protected:
+    float speed = 300;
+    float width = 10;
+    float height = 100;
 public:
-    float Get1X();
-    float Get1Y();
-    float Get2X();
-    float Get2Y();
+    float x = 0;
+    float y = 0;
+    char side = 'a';
+    Paddle(char s);
+    float GetX();
+    float GetY();
+    Rectangle GetRect();
+    void OnUpdate(Ball* ball);
+    void OnDraw();
 };
 

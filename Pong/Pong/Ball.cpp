@@ -9,6 +9,22 @@ float Ball::GetX()
 {
 	return x;
 }
+void Ball::InvertSpeedY()
+{
+	ySpeed *= -1;
+}
+float Ball::GetSpeedX()
+{
+	return xSpeed;
+}
+float Ball::GetSpeedY()
+{
+	return ySpeed;
+}
+void Ball::InvertSpeedX()
+{
+	xSpeed *= -1;
+}
 float Ball::GetY()
 {
 	return y;
@@ -18,41 +34,36 @@ float Ball::GetRadius()
 	return rad;
 }
 
-int Ball::Move()
+
+int Ball::OnUpdate()
 {
 	x += xSpeed * GetFrameTime();
 	y += ySpeed * GetFrameTime();
 	if (y + rad > GetScreenHeight())
 	{
 		y = GetScreenHeight() - rad;
-		ySpeed *= -1;
+		InvertSpeedY();
 	}
 	if (y - rad < 0)
 	{
 		y = 0 + rad;
-		ySpeed *= -1;
+		InvertSpeedY();
 	}
 	if (x + rad > GetScreenWidth() - 10)
 	{
 		x = GetScreenWidth() / 2;
 		y = GetScreenHeight() / 2;
-		xSpeed *= -1;
+		InvertSpeedX();
 		return -1;
 	}
 	if (x - rad < 10)
 	{
 		x = GetScreenWidth() / 2;
 		y = GetScreenHeight() / 2;
-		xSpeed *= -1;
+		InvertSpeedX();
 		return 1;
 	}
-	if (Paddle::Get1X() > x)
 	return 0;
-}
-
-void Ball::OnUpdate()
-{
-
 }
 void Ball::OnDraw()
 {

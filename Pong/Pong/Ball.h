@@ -1,7 +1,5 @@
 #pragma once
-#include "Paddle.h";
-class Ball :
-	public Paddle
+class Ball
 {
 	protected:
 		float x = 640;
@@ -11,10 +9,13 @@ class Ball :
 		float ySpeed = 300;
 	public:
 		Ball();
-		int Move();
 		float GetX();
+		void InvertSpeedX();
+		void InvertSpeedY();
+		float GetSpeedX();
+		float GetSpeedY();
 		float GetY();
 		float GetRadius();
-		void OnUpdate();
+		int OnUpdate();
 		void OnDraw();
 };
