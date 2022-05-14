@@ -3,6 +3,8 @@
 
 Ball::Ball()
 {
+	x = GetScreenWidth() / 2;
+	y = GetScreenHeight() / 2;
 }
 
 float Ball::GetX()
@@ -32,26 +34,30 @@ void Ball::InvertSpeedX()
 void Ball::InvertSpeedX(float yy, float h)
 {
 	xSpeed *= -1.1;
-	if (xSpeed < 0)
-	{
-	ySpeed = (y - yy) / (h / 2) * -xSpeed;
-	} else { ySpeed = (y - yy) / (h / 2) * xSpeed; }
 }
 void Ball::InvertSpeedY()
 {
-	ySpeed *= -1;
+	ySpeed *= -1.05;
 }
 void Ball::Stop()
 {
-	x = 640;
-	y = 360;
-	xSpeed = 0;
-	ySpeed = 0;
+	x = GetScreenWidth() / 2;
+	y = GetScreenHeight() / 2;
+	if (xSpeed > 0)
+	{
+		xSpeed = 0.00001;
+		ySpeed = 0.00001;
+	}
+	if (xSpeed < 0)
+	{
+		xSpeed = -0.00001;
+		ySpeed = -0.00001;
+	}
 }
 void Ball::Start()
 {
-	xSpeed = -300;
-	ySpeed = -300;
+	xSpeed *= 30000000;
+	ySpeed *= 30000000;
 }
 
 int Ball::OnUpdate()

@@ -5,7 +5,7 @@ class Paddle :
     public Ball
 {
 protected:
-    float speed = 500;
+    float speed = 1000;
     float width = 10;
     float height = 50;
 public:

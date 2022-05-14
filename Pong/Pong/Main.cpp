@@ -8,7 +8,7 @@ int main()
     Game* game = new Game();
 
     //Setting how wany frames per second the game should be running at.
-    SetTargetFPS(120); 
+    SetTargetFPS(60); 
     //Sets the size of the game window and the name of the window.
     InitWindow(1280, 720, "Pong");
 

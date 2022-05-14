@@ -2,8 +2,8 @@
 class Ball
 {
 	protected:
-		float x = 640;
-		float y = 360;
+		float x = 0;
+		float y = 0;
 		float rad = 10;
 		float xSpeed = 300;
 		float ySpeed = 300;

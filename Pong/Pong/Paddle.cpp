@@ -1,23 +1,19 @@
 #include "Paddle.h"
 #include "raylib.h"
-
 Paddle::Paddle(char s) {
 	y = GetScreenHeight() / 2 - height / 2;
 	side = s;
 }
-
 float Paddle::GetX() {
 	return x;
 }
 float Paddle::GetY() {
 	return y;
 }
-
 Rectangle Paddle::GetRect()
 {
-	return Rectangle{ Paddle::GetX() - Paddle::width / 2, Paddle::GetY() - Paddle::height / 2, 10, height };
+	return Rectangle{ Paddle::GetX() - Paddle::width / 2, Paddle::GetY(), 10, height };
 }
-
 void Paddle::OnUpdate(Ball* ball)
 {
 	if (IsKeyDown(KEY_W) && side == 'l')
@@ -51,7 +47,6 @@ void Paddle::OnUpdate(Ball* ball)
 		}
 	}
 }
-
 void Paddle::OnDraw()
 {
 	DrawRectangleRec(GetRect(), WHITE);
