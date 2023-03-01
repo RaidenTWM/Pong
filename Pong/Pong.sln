@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pong", "Pong\Pong.vcxproj", "{FE880C39-1682-480D-8EAA-A0D5ADECABB4}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Raylib", "..\Raylib\Bindings\Raylib.shproj", "{F660FF67-D70E-4AE0-9080-D922243E9B6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C491A45D-B799-49AE-BCB2-468BD7BE041D}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\Raylib\Bindings\Raylib.projitems*{f660ff67-d70e-4ae0-9080-d922243e9b6e}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
