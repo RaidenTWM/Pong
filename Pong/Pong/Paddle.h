@@ -11,7 +11,6 @@ protected:
 public:
     float x = 0;
     float y = 0;
-    Color color = WHITE;
     char side = 'a';
     Paddle(char s);
     float GetX();

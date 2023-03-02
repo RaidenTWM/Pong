@@ -3,11 +3,6 @@
 Paddle::Paddle(char s) {
 	y = GetScreenHeight() / 2 - height / 2;
 	side = s;
-	if (s == 'l')
-	{
-		color = RED;
-	}
-	else { color = BLUE; }
 }
 float Paddle::GetX() {
 	return x;
@@ -21,19 +16,19 @@ Rectangle Paddle::GetRect()
 }
 void Paddle::OnUpdate(Ball* ball)
 {
-	if (IsKeyDown(KEY_W) && side == 'l' && y > 0)
+	if (IsKeyDown(KEY_W) && side == 'l')
 	{
 		y -= speed * GetFrameTime();
 	}
-	if (IsKeyDown(KEY_S) && side == 'l' && y + height < GetScreenHeight())
+	if (IsKeyDown(KEY_S) && side == 'l')
 	{
 		y += speed * GetFrameTime();
 	}
-	if (IsKeyDown(KEY_UP) && side == 'r' && y > 0)
+	if (IsKeyDown(KEY_UP) && side == 'r')
 	{
 		y -= speed * GetFrameTime();
 	}
-	if (IsKeyDown(KEY_DOWN) && side == 'r' && y + height < GetScreenHeight())
+	if (IsKeyDown(KEY_DOWN) && side == 'r')
 	{
 		y += speed * GetFrameTime();
 	}
@@ -51,10 +46,8 @@ void Paddle::OnUpdate(Ball* ball)
 			ball->InvertSpeedX(y, height);
 		}
 	}
-	if (y + height > GetScreenHeight()) { y = GetScreenHeight() - height; }
-	if (y < 0) { y = 0; }
 }
 void Paddle::OnDraw()
 {
-	DrawRectangleRec(GetRect(), color);
+	DrawRectangleRec(GetRect(), WHITE);
 }
